@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxos</title>
+    <link rel="stylesheet" href="header.css">
+    <style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+        }
+
+        aside {
+            width: 20%;
+            padding: 20px;
+        }
+
+        .categories {
+            list-style: none;
+            padding: 0;
+        }
+
+        .categories li {
+            margin-bottom: 10px;
+        }
+
+        .categories li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .categories li a:hover {
+            color: rgba(84, 169, 61, 0.523);
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .imac-promo {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .imac-promo img {
+            width: 50%;
+        }
+
+        .promo-details {
+            margin-left: 20px;
+        }
+
+        .promo-details h2 {
+            color: #ff9900;
+        }
+
+        .promo-details button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .promo-details button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .image-gallery {
+            display: flex;
+            overflow-x: auto;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .special-offers {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .offer {
+            flex: 1;
+            margin: 0 10px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .offer:hover {
+            background-color: #f9f9f9;
+            transform: scale(1.05);
+        }
+
+        .new-products {
+            padding: 20px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color:rgba(196, 245, 182, 0.303);
+            transition: color 0.3s;
+        }
+
+        .footer-section p,
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section p:hover,
+        .footer-section ul li a:hover,
+        .footer-section h2:hover {
+            color: rgba(196, 245, 182, 0.303);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: rgba(196, 245, 182, 0.303);
+        }
+        .footer-bottom p {
+            margin: 0;
+            transition: color 0.3s;
+        }
+        .footer-bottom p:hover {
+            color:rgba(196, 245, 182, 0.303);
+        }
+        #luxos{
+            padding-right:350px;
+        }
+        .li:hover{
+            transition: transform 0.3s;
+            transform:scale(1.1);
+        }
+        #shopnow{
+            border-radius: 5px;
+        }
+    #navbar{
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="" class="luxos">luxos</a>
+        <nav class="navbar">
+            <a href="luxos.html">Home</a>
+            <a href="television.html">Television</a>
+            <a href="">Catalog</a>
+            <a href="">Contact</a>
+            <a href="loginform.html">Login</a>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <ul class="categories">
+                <li><a href="#">COMPUTER</a></li>
+                <li><a href="#">SMART PHONE</a></li>
+                <li><a href="television.html">TV&AUDIO</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+            </ul>
+        </aside>
+        <section class="main-content">
+            <h id="newlaunch">Newlaunch*</h>
+            <div class="imac-promo">
+                <img src="imacfront.jpg" alt="The new iMac">
+                <div class="promo-details">
+                    <h2>The new iMac for you</h2>
+                    <p>21.5-Inch Now Starting At $1099</p>
+                    <p>27-Inch Starting At $1799</p>
+                    <a href="shopnow.html"><button id="shopnow">SHOP NOW</button></a>
+                </div>
+            </div>
+            <h2>Our catalog</h2>
+            <div class="image-gallery">
+                <img src="iphone15plus.png" alt="Product Image 1">
+                <a href="samsung8ktv.html"><img src="samsung8k.png" alt="Product Image 2"></a>
+                <img src="partybox710.png" alt="Product Image 4">
+            </div>
+            <div class="special-offers">
+                <div class="offer">
+                    <h3>Special Offer 1</h3>
+                    <p>Details about special offer 1.</p>
+                </div>
+                <div class="offer">
+                    <h3>Special Offer 2</h3>
+                    <p>Details about special offer 2.</p>
+                </div>
+                <div class="offer">
+                    <h3>Special Offer 3</h3>
+                    <p>Details about special offer 3.</p>
+                </div>
+            </div>
+            <div class="new-products">
+                <h2>New Products</h2>
+                    <p> <b> Apologies!</b>certainly we are not doing new launches</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo">
+                <h2>LUXOS</h2>
+                <p></p>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>Explore All Ipads</b></a></li>
+                    <li class="li"><a href="#">ipad pro</a></li>
+                    <li class="li"><a href="#">ipad air</a></li>
+                    <li class="li"><a href="#">ipad</a></li>
+                    <li class="li"><a href="#">ipad mini</a></li>
+                    <li class="li"><a href="#">apple pencil</a></li>
+                    <li class="li"><a href="#">camera</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>Explore All Mac</b></a></li>
+                    <li class="li"><a href="#">macbook air</a></li>
+                    <li class="li"><a href="#">macbook pro</a></li>
+                    <li class="li"><a href="#">imac</a></li>
+                    <li class="li"><a href="#">mac mini</a></li>
+                    <li class="li"><a href="#">mac studio</a></li>
+                    <li class="li"><a href="#">mac pro</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>Explore All Iphones</b></a></li>
+                    <li class="li"><a href="#">iphone 15 pro max</a></li>
+                    <li class="li"><a href="#">iphone 15 pro</a></li>
+                    <li class="li"><a href="#">iphone 15 plus</a></li>
+                    <li class="li"><a href="#">iphone 15</a></li>
+                    <li class="li"><a href="#">iphone SE</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>Support</b></a></li>
+                    <li class="li"><a href="#">iphone</a></li>
+                    <li class="li"><a href="#">mac</a></li>
+                    <li class="li"><a href="#">watch</a></li>
+                    <li class="li"><a href="#">airpods</a></li>
+                    <li class="li"><a href="#">music</a></li>
+                    <li class="li"><a href="#">TV</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
