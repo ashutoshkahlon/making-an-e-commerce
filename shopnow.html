@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27-inch iMac</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-right: 20px;
+        }
+
+        .nav-menu li:last-child {
+            margin-right: 0;
+        }
+
+        .nav-menu li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            color: #0071e3;
+        }
+
+        .search-bar {
+            margin-right: 20px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        .profile-pic {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .login-btn, .signup-btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
+            background-color: #0071e3;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover, .signup-btn:hover {
+            background-color: #005bb5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .product-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-image {
+            margin-bottom: 20px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .image-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-selector input[type="radio"] {
+            display: none;
+        }
+
+        .image-selector label {
+            cursor: pointer;
+        }
+
+        .image-selector img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .image-selector input[type="radio"]:checked + label img {
+            border-color: #0071e3;
+        }
+
+        .options-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-left: 20px;
+            width: calc(100% - 540px);
+            max-width: 500px;
+        }
+
+        .color-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .color-selector input[type="radio"] {
+            display: none;
+        }
+
+        .color-selector label {
+            cursor: pointer;
+        }
+
+        .color-selector div {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .color-selector input[type="radio"]:checked + label div {
+            border-color: #0071e3;
+        }
+
+        .option {
+            margin-bottom: 20px;
+        }
+
+        .option button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: left;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option button:hover {
+            background-color: #e5e5e5;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            color: #0071e3;
+        }
+
+        .buy-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buy-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #0071e3;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .buy-buttons button:hover {
+            background-color: #005bb5;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+                justify-content: center;
+            }
+
+            .product-section,
+            .options-section {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-left,
+            .nav-right {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .nav-right {
+                order: -1; /* Move nav-right to the top on smaller screens */
+            }
+
+            .nav-menu {
+                flex-direction: column;
+            }
+
+            .search-bar {
+                margin: 0 auto 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-left">
+                LUXOS
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <input type="text" class="search-bar" placeholder="Search...">
+                <img src="mypp.jpg" alt="Profile" class="profile-pic">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="product-section">
+            <div class="product-title">Customize your iMac</div>
+            <div class="product-image">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="imacfront.jpg" alt="iMac Front Image" id="mainImage"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="image-selector">
+                <input type="radio" id="img1" name="image" checked>
+                <label for="img1"><img src="imacfront.jpg" alt="iMac Front Image"></label>
+
+                <input type="radio" id="img2" name="image">
+                <label for="img2"><img src="imacback.jpg" alt="iMac Back Image"></label>
+            </div>
+        </div>
+        <div class="options-section">
+            <h2>Select your shade</h2>
+            <div class="color-selector">
+                <input type="radio" id="color1" name="color" value="space-gray" checked>
+                <label for="color1"><div style="background-color:#A0BAB1;"></div></label>
+
+                <input type="radio" id="color2" name="color" value="silver">
+                <label for="color2"><div style="background-color: #d4d4d4;"></div></label>
+            </div>
+            <h2>Chip (Processor)</h2>
+            <div class="option">
+                <button id="chip1" data-price="2499" onclick="updatePrice(this)">Apple M3 Pro chip with 12-core CPU, 18-core GPU, 16-core Neural Engine</button>
+            </div>
+            <div class="option">
+                <button id="chip2" data-price="2899" onclick="updatePrice(this)">Apple M3 Max chip with 14-core CPU, 30-core GPU, 16-core Neural Engine (+$400.00)</button>
+            </div>
+            <div class="option">
+                <button id="chip3" data-price="3199" onclick="updatePrice(this)">Apple M3 Max chip with 16-core CPU, 40-core GPU, 16-core Neural Engine (+$700.00)</button>
+            </div>
+            <h2>Memory</h2>
+            <div class="option">
+                <button id="memory1" data-price="2499" onclick="updatePrice(this)">18GB unified memory</button>
+            </div>
+            <div class="option">
+                <button id="memory2" data-price="2899" onclick="updatePrice(this)">36GB unified memory (+$400.00)</button>
+            </div>
+            <div class="option">
+                <button id="memory3" data-price="3099" onclick="updatePrice(this)">48GB unified memory (+$600.00)</button>
+            </div>
+            <div class="option">
+                <button id="memory4" data-price="3299" onclick="updatePrice(this)">64GB unified memory (+$800.00)</button>
+            </div>
+            <div class="option">
+                <button id="memory5" data-price="3699" onclick="updatePrice(this)">96GB unified memory (+$1,200.00)</button>
+            </div>
+            <div class="option">
+                <button id="memory6" data-price="4099" onclick="updatePrice(this)">128GB unified memory (+$1,600.00)</button>
+            </div>
+            <div id="total-price" class="price">$2,499.00</div>
+            <div class="buy-buttons">
+                <button>Add to Bag</button>
+                <button>Explore</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+        document.querySelectorAll('.color-selector input').forEach(input => {
+            input.addEventListener('change', function () {
+                const selectedColor = this.value;
+                const images = colorImages[selectedColor];
+                document.getElementById('mainImage').src = images[0];
+                document.querySelectorAll('.image-selector img')[0].src = images[0];
+                document.querySelectorAll('.image-selector img')[1].src = images[1];
+                document.getElementById('img1').checked = true;
+            });
+        });
+
+        document.querySelectorAll('.image-selector input').forEach(input => {
+            input.addEventListener('change', function () {
+                const selectedImage = this.nextElementSibling.querySelector('img').src;
+                document.getElementById('mainImage').src = selectedImage;
+            });
+        });
+
+        function updatePrice(btn) {
+            const price = btn.getAttribute('data-price');
+            document.getElementById('total-price').textContent = `$${price}.00`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Carousel</title>
+<style>
+  .carousel-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Prevent images from stretching */
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .prev-btn {
+    left: 0;
+  }
+
+  .next-btn {
+    right: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel-slide">
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 3">
+    <!-- Add more images as needed -->
+  </div>
+  <button class="carousel-btn prev-btn" onclick="prevSlide()">❮</button>
+  <button class="carousel-btn next-btn" onclick="nextSlide()">❯</button>
+</div>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.carousel-slide img');
+  const totalSlides = slides.length;
+
+  function showSlide() {
+    slides.forEach((slide) => {
+      slide.style.transform = `translateX(-${slideIndex * 100}%)`;
+    });
+  }
+
+  function nextSlide() {
+    if (slideIndex < totalSlides - 1) {
+      slideIndex++;
+    } else {
+      slideIndex = 0;
+    }
+    showSlide();
+  }
+
+  function prevSlide() {
+    if (slideIndex > 0) {
+      slideIndex--;
+    } else {
+      slideIndex = totalSlides - 1;
+    }
+    showSlide();
+  }
+</script>
+
+</body>
+</html>

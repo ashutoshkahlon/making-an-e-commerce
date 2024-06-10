@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxos</title>
+    <style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:white;
+            color: #fff;
+            position: sticky;
+        }
+        
+        .nav-left .nav-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color:#333;
+            text-decoration: none;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .nav-right .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-right .nav-menu li a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-right .nav-menu li a:hover {
+            background-color: #cdefd5;
+        }
+        
+        .search-bar {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+        
+        .login-btn, .signup-btn {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .login-btn:hover, .signup-btn:hover {
+            background-color:#cdefd5 ;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+        }
+
+        aside {
+            width: 20%;
+            padding: 20px;
+        }
+
+        .categories {
+            list-style: none;
+            padding: 0;
+        }
+
+        .categories li {
+            margin-bottom: 10px;
+        }
+
+        .categories li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .categories li a:hover {
+            color: rgba(84, 169, 61, 0.523);
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .imac-promo {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .imac-promo img {
+            width: 50%;
+        }
+
+        .promo-details {
+            margin-left: 20px;
+        }
+
+        .promo-details h2 {
+            color: #ff9900;
+        }
+
+        .promo-details button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .promo-details button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .image-gallery {
+            display: flex;
+            overflow-x: auto;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .special-offers {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .offer {
+            flex: 1;
+            margin: 0 10px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .offer:hover {
+            background-color: #f9f9f9;
+            transform: scale(1.05);
+        }
+
+        .new-products {
+            padding: 20px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color:rgba(196, 245, 182, 0.303);
+            transition: color 0.3s;
+        }
+
+        .footer-section p,
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section p:hover,
+        .footer-section ul li a:hover,
+        .footer-section h2:hover {
+            color: rgba(196, 245, 182, 0.303);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: rgba(196, 245, 182, 0.303);
+        }
+        .footer-bottom p {
+            margin: 0;
+            transition: color 0.3s;
+        }
+        .footer-bottom p:hover {
+            color:rgba(196, 245, 182, 0.303);
+        }
+        #luxos{
+            padding-right:350px;
+        }
+        .li:hover{
+            transition: transform 0.3s;
+            transform:scale(1.1);
+        }
+        #shopnow{
+            border-radius: 5px;
+        }
+        #navbar{
+            margin-top: 10px;
+        }
+        .search-bar{
+            border: #333 solid;
+        }
+        .nav-logo{
+            padding-left: 50px;
+        }
+        .carousel-container {
+            width: 1300px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            height: 400px;
+          }
+        
+          .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+          }
+        
+          .carousel-slide .slide-container {
+            flex: 0 0 auto;
+            width: 100%;
+          }
+        
+          .carousel-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover; 
+            border-radius: 5px;
+          }  
+          .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform:translateY(-50%);
+            cursor: pointer;
+            background-color: transparent;
+            padding: 10px;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s ease;
+            border-radius: 25px;
+          }
+        
+          .carousel-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+          }
+        
+          .prev-btn {
+            left: 0;
+          }
+        
+          .next-btn {
+            right: 0;
+          }
+          .img{
+            position: relative;
+          }
+          .buy-nowbtn3{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color:black;
+            color: white;
+            border: none;
+            margin-right: 1100px;
+            margin-bottom: 110px;
+            height: 40px;
+            width: 100px;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+          .p{
+            position: absolute;
+            margin-top:-250px;
+            margin-left:160px;
+            font-weight: 500em;
+            font-size: xx-large;
+            width: 350px;
+            height: 50px;
+            word-break: break-all;
+          }
+          .bespokeai{
+            position: absolute;
+            margin-top:-250px;
+            margin-left:95px;
+            font-weight: 500em;
+            font-size: xx-large;
+            width: 210px;
+            height: 50px;
+            word-break: break-all;
+          }
+          .maccx{
+            position: absolute;
+            margin-top:-250px;
+            margin-left:95px;
+            font-weight: 500em;
+            font-size: xx-large;
+            width: 375px;
+            height: 50px;
+            word-break: break-all;
+          }
+          mark{
+            background-color: lawngreen;
+          }
+          .samsungtv{
+            position: absolute;
+            margin-top:-270px;
+            margin-left:95px;
+            font-weight: 500em;
+            font-size: xx-large;
+            width: 350px;
+            height: 50px;
+            word-break: break-all;
+          }
+          .tizen{
+            position: absolute;
+            margin-top:-200px;
+            margin-left:95px;
+            font-weight: 500em;
+            font-size: xx-large;
+            width: 350px;
+            height: 50px;
+            word-break: break-all; 
+          }
+          .mark2{
+            background-color:#cdefd5;
+          }
+        .iphone15plus{
+                position: absolute;
+                margin-top:-250px;
+                margin-left:95px;
+                font-weight: 500em;
+                font-size: xx-large;
+                width: 300px;
+                height: 50px;
+                word-break: break-all; 
+              }
+        .mark3{
+            background-color: rgb(129, 77, 33);
+        } 
+        .section-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .section-grid .grid-item {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        .section-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .grid-item-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .grid-item-content h3 {
+            margin: 10px 0;
+        }
+        .grid-item-content button {
+            padding: 10px 20px;
+            background-color: #0071e3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .grid-item-content button:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="" class="nav-logo"><img src="luxos.png" alt="luxos" height="90px" width="100px"></a>
+            </div>
+                  <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="luxos.html">Home</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <input type="text" class="search-bar" placeholder="Search...">
+                <img src="mypp.jpg" alt="Profile" class="profile-pic">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <ul class="categories">
+                <li><a href="#">COMPUTER</a></li>
+                <li><a href="#">SMART PHONE</a></li>
+                <li><a href="television.html">TV&AUDIO</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+            </ul>
+        </aside>
+        <section class="main-content">
+            <h1>Advertized</h1>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                  <div class="slide-container">
+                    <img src="caresuel.jpg" alt="Image 1" id="img">
+                    <p class="bespokeai"><b>Welcome to BESPOKE Al.</b></p>
+                    <a href="#"><button class="buy-nowbtn3" onclick="buyNow()">explore</button></a>
+                  </div>
+                  <div class="slide-container">
+                    <img src="imaccarosuel.jpg" alt="Image 2">
+                    <p class="maccx"><b>Sprint through anything with
+                        <mark>APPLE SILICON.</mark> </b></p>
+                    <button class="buy-nowbtn3" onclick="buyNow()">explore</button>
+                  </div>
+                  <div class="slide-container">
+                    <img src="tvscaresuel.webp" alt="Image 3">
+                    <p class="samsungtv"><b>Experience a New Era of Samsung AI TV
+                    </b></p>
+                    <p class="tizen"><mark class="mark2">#tizenOS</mark></p>
+                    <a href="television.html"><button class="buy-nowbtn3" onclick="buyNow()">explore</button></a>
+                  </div>
+                  <div class="slide-container">
+                    <img src="15pluscarosuel.png" alt="Image 4">
+                    <p class="iphone15plus"><b>Colour through
+                        and through.
+                    </b></p>
+                   <a href="iphone15plus.html"> <button class="buy-nowbtn3" onclick="buyNow()">explore</button></a>
+                  </div>
+                  <div class="slide-container">
+                    <img src="bowerswillkns.png" alt="Image 5">
+                    <p class="iphone15plus"><b>Zeppelin <mark class="mark3"> McLaren</mark> Edition
+                    </b></p>
+                    <button class="buy-nowbtn3" onclick="buyNow()">explore</button>
+                  </div>
+                  <div class="slide-container">
+                    <img src="1416inchmac.jpg" alt="Image 5">
+                    <p class="iphone15plus"><b>New colors?
+                    </b></p>
+                    <a href="macbook.html"><button class="buy-nowbtn3">explore</button></a>
+                  </div>
+                </div>
+                <button class="carousel-btn prev-btn" onclick="prevSlide()">❮</button>
+                <button class="carousel-btn next-btn" onclick="nextSlide()">❯</button>
+              </div>
+            <h id="newlaunch">Newlaunch*</h>
+            <div class="imac-promo">
+                <img src="imacfront.jpg" alt="The new iMac">
+                <div class="promo-details">
+                    <h2>The new iMac for you</h2>
+                    <p>21.5-Inch Now Starting At $1099</p>
+                    <p>27-Inch Starting At $1799</p>
+                    <a href="shopnow.html"><button id="shopnow">SHOP NOW</button></a>
+                </div>
+            </div>
+            <h2>Our catalog</h2>
+            <div class="image-gallery">
+                <a href="iphone15plus.html"><img src="iphone15plus.png" alt="Product Image 1"></a>
+                <a href="samsung8ktv.html"><img src="samsung8k.png" alt="Product Image 2"></a>
+                <img src="partybox710.png" alt="Product Image 4">
+            </div>
+            <div class="special-offers">
+                <div class="offer">
+                    <h3>Special Offer 1</h3>
+                    <p>Details about special offer 1.</p>
+                </div>
+                <div class="offer">
+                    <h3>Special Offer 2</h3>
+                    <p>Details about special offer 2.</p>
+                </div>
+                <div class="offer">
+                    <h3>Special Offer 3</h3>
+                    <p>Details about special offer 3.</p>
+                </div>
+            </div>
+            <div class="new-products">
+                <section>
+                <h2>New Products</h2>
+                    <p> <b> Apologies!</b>certainly we are not doing new launches</p>
+                    <div class="section-grid">
+                        <div class="grid-item">
+                            <img src="mac.jpeg" alt="College Students">
+                            <div class="grid-item-content">
+                                <h3>Macbook pro</h3>
+                                <a href="macbook.html"><button>explore</button></a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <img src="watch.jpg" alt="Watch">
+                            <div class="grid-item-content">
+                                <h3>Watch</h3>
+                                <button>Learn more</button>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <img src="vision_pro.jpg" alt="Vision Pro">
+                            <div class="grid-item-content">
+                                <h3>Vision Pro</h3>
+                                <button>Learn more</button>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <img src="design_awards.jpg" alt="Design Awards">
+                            <div class="grid-item-content">
+                                <h3>Apple Design Awards</h3>
+                                <button>View the winners</button>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <img src="card.jpg" alt="Card">
+                            <div class="grid-item-content">
+                                <h3>Apple Card</h3>
+                                <button>Learn more</button>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <img src="trade_in.jpg" alt="Trade In">
+                            <div class="grid-item-content">
+                                <h3>Trade In</h3>
+                                <button>Get your estimate</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo">
+                <h2>LUXOS</h2>
+                <p></p>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>explore All Ipads</b></a></li>
+                    <li class="li"><a href="#">ipad pro</a></li>
+                    <li class="li"><a href="#">ipad air</a></li>
+                    <li class="li"><a href="#">ipad</a></li>
+                    <li class="li"><a href="#">ipad mini</a></li>
+                    <li class="li"><a href="#">apple pencil</a></li>
+                    <li class="li"><a href="#">camera</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>explore All Mac</b></a></li>
+                    <li class="li"><a href="#">macbook air</a></li>
+                    <li class="li"><a href="#">macbook pro</a></li>
+                    <li class="li"><a href="#">imac</a></li>
+                    <li class="li"><a href="#">mac mini</a></li>
+                    <li class="li"><a href="#">mac studio</a></li>
+                    <li class="li"><a href="#">mac pro</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>explore All Iphones</b></a></li>
+                    <li class="li"><a href="#">iphone 15 pro max</a></li>
+                    <li class="li"><a href="#">iphone 15 pro</a></li>
+                    <li class="li"><a href="#">iphone 15 plus</a></li>
+                    <li class="li"><a href="#">iphone 15</a></li>
+                    <li class="li"><a href="#">iphone SE</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>Support</b></a></li>
+                    <li class="li"><a href="#">iphone</a></li>
+                    <li class="li"><a href="#">mac</a></li>
+                    <li class="li"><a href="#">watch</a></li>
+                    <li class="li"><a href="#">airpods</a></li>
+                    <li class="li"><a href="#">music</a></li>
+                    <li class="li"><a href="#">TV</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script> 
+        window.onload = function() {
+            fadeIn(document.body); // Call the fadeIn function when the window loads
+          };
+        
+          function fadeIn(element) {
+            var opacity = 0;
+            var timer = setInterval(function() {
+              if (opacity >= 1) {
+                clearInterval(timer);
+              }
+              element.style.opacity = opacity;
+              opacity += 0.1; // Adjust the increment for smoother or faster animation
+            }, 100); // Adjust the interval for smoother or faster animation
+          }   let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide .slide-container');
+        const totalSlides = slides.length;
+      
+        function showSlide() {
+          slides.forEach((slide) => {
+            slide.style.transition = 'transform 0.5s ease';
+            slide.style.transform = `translateX(-${slideIndex * 100}%)`;
+          });
+        }
+      
+        function nextSlide() {
+          if (slideIndex < totalSlides - 1) {
+            slideIndex++;
+          } else {
+            slideIndex = 0;
+          }
+          showSlide();
+        }
+      
+        function prevSlide() {
+          if (slideIndex > 0) {
+            slideIndex--;
+          } else {
+            slideIndex = totalSlides - 1;
+          }
+          showSlide();
+        }
+      
+        function startAutoSlide() {
+          setInterval(() => {
+            nextSlide();
+          }, 5000);
+        }
+        startAutoSlide();
+      </script>
+      
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.63 m QN800D Neo QLED 8K Smart TV</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+        font-family:Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        background: #000;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:black;
+        color: white;
+        position: sticky;
+    }
+    
+    .nav-left .nav-logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 50px;
+        color:white;
+        text-decoration: none;
+    }
+    
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .nav-right .nav-menu {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .nav-right .nav-menu li a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-right .nav-menu li a:hover {
+        background-color: #cdefd5;
+    }
+    
+    .search-bar {
+        padding: 5px;
+        border: solid white;
+        border-radius: 4px;
+
+    }
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #fff;
+    }
+    
+    .login-btn, .signup-btn {
+        color: white;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .login-btn:hover, .signup-btn:hover {
+        background-color:#cdefd5 ;
+    }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #98c93e;
+            transition: color 0.3s;
+        }
+
+        .footer-section p,
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section p:hover,
+        .footer-section ul li a:hover,
+        .footer-section h2:hover {
+            color: #98c93e;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #98c93e;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom p:hover {
+            color: #98c93e;
+        }
+    #luxos{
+        padding-right: 550px;
+    }
+    .scroll-section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+    }
+
+
+    .content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+
+    }
+    .content h2, .content p,.content h1 ,.content button{
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+    .content.visible h2, .content.visible p , .content.visible h1, .content.visible button {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .content h1{
+        transition-delay: 0.1s;
+    }
+    .content h2 {
+        transition-delay: 0.2s;
+    }
+    .content p {
+        transition-delay: 0.3s;
+    }
+    .content button {
+        transition-delay: 0.3s;
+    }
+    .imgremote{
+        border-radius: 20px;
+    }
+    .proccesor{
+        border-radius: 10px;
+    }
+    .buynow{
+        position: absolute;
+        background-color:black;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 100px;
+        border-radius: 20px;
+        cursor: pointer;
+        
+      }
+      .buynow:hover{
+        background:#333;
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="luxos.html" class="nav-logo">LUXOS</a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="luxos.html">Home</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <input type="text" class="search-bar" placeholder="Search...">
+                <img src="mypp.jpg" alt="Profile" class="profile-pic">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <section class="scroll-section" id="section1">
+        <img src="samsung4k1.png" alt="">
+    <div class="content">
+        <h2><b>1.08 m CUE70 Crystal 4K UHD Smart TV</b></h2>
+        <p><b>Vivid crystal colors come to life</b></p>
+        <a href="samsung4k.html"><button class="buynow" onclick="buyNow()">explore</button></a>
+    </div>
+</section>
+<section class="scroll-section" id="section2">
+    <div class="content">
+        <h1>1.63 m QN800D Neo QLED 8K Smart TV</h1>
+        <p>Upscale every moment with more Wow</p>
+        <a href="samsung8ktv.html"><button class="buynow" onclick="buyNow()">explore</button></a>
+    </div>
+    <img src="samsung8k2.png" class="proccesor">
+</section>
+<center><h1 style="color:white;">So! let's choose the device</h1></center>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo">
+                <h2>LUXOS</h2>
+                <p></p>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>explore All Ipads</b></a></li>
+                    <li class="li"><a href="#">ipad pro</a></li>
+                    <li class="li"><a href="#">ipad air</a></li>
+                    <li class="li"><a href="#">ipad</a></li>
+                    <li class="li"><a href="#">ipad mini</a></li>
+                    <li class="li"><a href="#">apple pencil</a></li>
+                    <li class="li"><a href="#">camera</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>explore All Mac</b></a></li>
+                    <li class="li"><a href="#">macbook air</a></li>
+                    <li class="li"><a href="#">macbook pro</a></li>
+                    <li class="li"><a href="#">imac</a></li>
+                    <li class="li"><a href="#">mac mini</a></li>
+                    <li class="li"><a href="#">mac studio</a></li>
+                    <li class="li"><a href="#">mac pro</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>explore All Iphones</b></a></li>
+                    <li class="li"><a href="#">iphone 15 pro max</a></li>
+                    <li class="li"><a href="#">iphone 15 pro</a></li>
+                    <li class="li"><a href="#">iphone 15 plus</a></li>
+                    <li class="li"><a href="#">iphone 15</a></li>
+                    <li class="li"><a href="#">iphone SE</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="li"><a href="#"><b>Support</b></a></li>
+                    <li class="li"><a href="#">iphone</a></li>
+                    <li class="li"><a href="#">mac</a></li>
+                    <li class="li"><a href="#">watch</a></li>
+                    <li class="li"><a href="#">airpods</a></li>
+                    <li class="li"><a href="#">music</a></li>
+                    <li class="li"><a href="#">TV</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    window.onload = function() {
+        fadeIn(document.body); // Call the fadeIn function when the window loads
+      };
+    
+      function fadeIn(element) {
+        var opacity = 0;
+        var timer = setInterval(function() {
+          if (opacity >= 1) {
+            clearInterval(timer);
+          }
+          element.style.opacity = opacity;
+          opacity += 0.1; // Adjust the increment for smoother or faster animation
+        }, 100); // Adjust the interval for smoother or faster animation
+      } 
+    const mainImage = document.getElementById('mainImage');
+    const images = document.querySelectorAll('.image-selector input');
+
+    images.forEach(image => {
+        image.addEventListener('change', function () {
+            const selectedImage = this.nextElementSibling.querySelector('img').src;
+            mainImage.src = selectedImage;
+        });
+    });
+
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.scroll-section');
+        const header = document.querySelector('header');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.content').classList.add('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    });
+</script>
+</body>
+</html>

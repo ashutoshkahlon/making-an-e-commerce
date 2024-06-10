@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+        <style>
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color:transparent;
+                color: #fff;
+                position: sticky;
+            }
+            
+            .nav-left .nav-logo {
+                font-size: 24px;
+                font-weight: bold;
+                color:#333;
+                text-decoration: none;
+            }
+            
+            .nav-right {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .nav-right .nav-menu {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+            }
+        
+            .nav-right .nav-menu li a {
+                color: #333;
+                text-decoration: none;
+                padding: 8px 12px;
+                border-radius: 4px;
+                transition: background-color 0.3s ease;
+            }
+            
+            .nav-right .nav-menu li a:hover {
+                background-color: #cdefd5;
+            }
+            
+            .search-bar {
+                padding: 5px;
+                border: none;
+                border-radius: 4px;
+            }
+            
+            .profile-pic {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #fff;
+            }
+            
+            .login-btn, .signup-btn {
+                color: #333;
+                text-decoration: none;
+                padding: 8px 12px;
+                border-radius: 4px;
+                transition: background-color 0.3s ease;
+            }
+            
+            .login-btn:hover, .signup-btn:hover {
+                background-color:#cdefd5 ;
+            }
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .background-circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            opacity: 0.7;
+        }
+
+        .circle.one {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 15%;
+        }
+
+        .circle.two {
+            width: 300px;
+            height: 300px;
+            bottom: 20%;
+            right: 15%;
+        }
+
+        .circle.three {
+            width: 100px;
+            height: 100px;
+            bottom: 30%;
+            left: 40%;
+        }
+.circle.three
+       
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+        .main section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        p, form {
+            text-align: center;
+        }
+        a {
+            color: #e74c3c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+        form {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background: #2c3e50;
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        form input[type="submit"]:hover {
+            background: #e74c3c;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2c3e50;
+            transition: color 0.3s ease;
+            font-size: 1.5em;
+        }
+        .social-icons a:hover {
+            color: #e74c3c;
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .containermain {
+            margin-top: 100px;
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="" class="nav-logo"><img src="luxos.png" alt="luxos" height="90px" width="100px"></a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <input type="text" class="search-bar" placeholder="Search...">
+                <img src="mypp.jpg" alt="Profile" class="profile-pic">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <div class="background-circles">
+        <div class="circle one"></div>
+        <div class="circle two"></div>
+        <div class="circle three"></div>
+    </div>
+    <center>
+        <div class="containermain">
+            <section>
+                <h2>Feedback</h2>
+                <p>We are always looking to improve our services and products. Please share your thoughts and feedback with us using the form below:</p>
+                <form action="submit_feedback.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+            <section>
+                <h2>Contact Information</h2>
+                <p><strong>Customer Service:</strong></p>
+                <p>Phone: +1 (800) 123-4567<br>
+                Email: <a href="mailto:support@example.com">support@example.com</a></p>
+                
+                <p><strong>Head Office:</strong></p>
+                <p>Address: 1234 Main Street, Suite 500, Anytown, ST 12345, USA<br>
+                Phone: +1 (800) 234-5678<br>
+                Fax: +1 (800) 345-6789</p>
+                
+                <p><strong>Business Hours:</strong></p>
+                <p>Monday to Friday: 9:00 AM - 6:00 PM<br>
+                Saturday: 10:00 AM - 4:00 PM<br>
+                Sunday: Closed</p>
+            </section>
+            <section>
+                <h2>Connect with Us on Social Media</h2>
+                <p>Stay updated with our latest news and offers by following us on social media:</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/yourcompany" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </section>
+            <section>
+                <h2>Additional Contact Methods</h2>
+                <p><strong>Live Chat:</strong><br>
+                For immediate assistance, use our live chat feature available on our website during business hours.</p>
+                
+                <p><strong>Mailing Address:</strong><br>
+                For postal correspondence, please use the following address:<br>
+                Attn: Customer Relations<br>
+                1234 Main Street, Suite 500<br>
+                Anytown, ST 12345, USA</p>
+            </section>
+        </div>
+    </center>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
